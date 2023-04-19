@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="styles.css">
+     <title>Cambio de moneda</title>
+     <script>
+          function Sellection(){
+               var opciones = document.getElementsByName("eleccion");
+               console.log(opciones);
+               for (let i = 0; i < opciones.length; i++){
+                    if (opciones[i].checked){
+                         alert(opciones[i].value);
+                    }
+               }
+          }
+          function Confirm(){
+               var inp = parseInt(document.getElementById("ingreso").value);
+               var select = "";
+               var opciones = document.getElementsByName("eleccion");
+               for (let i = 0; i < opciones.length; i++){
+                    if (opciones[i].checked){
+                         select = opciones[i].value;
+                    }
+               }
+               alert("Recibirás un total de " + inp + " " + select)
+          }
+     </script>
+</head>
+<body>
+     <div>
+          <h1>Casa de cambio</h1>
+          <h3>Selecciona la moneda a enviar: </h3>
+          <input type="radio" name="eleccion" value="Dolares" >Dolar
+          <input type="radio" name="eleccion" value="Soles" >Sol
+          <input type="radio" name="eleccion" value="Euros" >Euro
+          <h3>Ingrese monto: </h3>
+          <input type="text" id="ingreso"><br>
+          <button type="button" onclick="Confirm()">Cotizar</button>
+     </div>
+</body>
+</html>
+
